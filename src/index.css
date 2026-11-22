@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper font-body text-ink antialiased;
+  }
+
+  ::selection {
+    @apply bg-clay text-paper;
+  }
+}
+
+@layer components {
+  /* Small mono label used above headings */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-clay;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-semibold sm:text-4xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-md bg-clay px-5 py-2.5 text-sm font-medium text-paper transition-all hover:-translate-y-0.5 hover:bg-claydark;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 rounded-md border border-ink/20 px-5 py-2.5 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-clay hover:text-clay;
+  }
+
+  /* Scroll-triggered reveal, driven by the Reveal component */
+  .reveal {
+    @apply translate-y-4 opacity-0 transition-all duration-700 ease-out;
+  }
+
+  .reveal-visible {
+    @apply translate-y-0 opacity-100;
+  }
+
+  /* Gentle bounce for the hero scroll cue */
+  .animate-scroll-cue {
+    animation: scroll-cue 2s ease-in-out infinite;
+  }
+}
+
+@keyframes scroll-cue {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* Users who ask for less motion see content instantly, no animation */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    @apply translate-y-0 opacity-100 transition-none;
+  }
+
+  .animate-scroll-cue {
+    animation: none;
+  }
+}
