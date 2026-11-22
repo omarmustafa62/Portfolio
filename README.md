@@ -2,7 +2,7 @@
 
 A responsive personal portfolio built with React, TypeScript, Vite, and Tailwind CSS. It includes an introduction, background and skills, selected projects, and contact links.
 
-**Live portfolio:** https://omarmustafa62.github.io/omar-mustafa-portfolio/
+**Live portfolio:** https://omarmustafa62.github.io/Portfolio/
 
 ## Tech stack
 
@@ -38,4 +38,4 @@ npm run preview
 
 The site deploys to GitHub Pages through the workflow in `.github/workflows/deploy.yml`. The workflow runs on pushes to `main`. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**.
 
-The project is configured for the repository path `/omar-mustafa-portfolio/`. If you rename the repository, update the deployment base path in `vite.config.ts`.
+The project is configured for the repository path `/Portfolio/`. If you rename the repository, update the deployment base path in `vite.config.ts`.
