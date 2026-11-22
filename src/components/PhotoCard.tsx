@@ -9,7 +9,7 @@ function PhotoCard() {
       <img
         src={publicAssetUrl(profile.photo)}
         alt={`Portrait of ${profile.name}`}
-        className="aspect-square w-full object-cover"
+        className="aspect-[3/4] w-full object-cover"
       />
     </div>
   )
